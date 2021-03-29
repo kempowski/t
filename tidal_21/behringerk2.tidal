@@ -1,0 +1,11 @@
+d1 $ s "midi"
+
+d1
+  $ slow 2
+  -- $ fast 4
+  $ n "0 2 4 [5 9]"
+  # s "midi"
+
+hush
+
+p 2 $ s "jk"

@@ -1,0 +1,48 @@
+cps (120/60)
+
+d1 $ n "0 7 5 3" # s "midi"
+  # midichan 0 --midichan definiert den channel
+-- n(note) spielt verschiedene midi noten. 0 enspricht c3
+
+d1 $ n "e5 c4 d4 g3" # s "midi" # midichan 0
+-- n spielt auch notenamen
+
+d1 $ midinote "0 7 5 4" # s "midi" # midichan 0
+-- midinote spielt vom absoluten null
+
+
+d1 $ n "0 7 5 4"
+  # s "midi"
+  # midichan 0
+  # gain "2" -- 2 enspricht 127 velocity
+  # sustain "1" -- einheit in sek
+
+d1 $ s "bd"
+  #gain 1.5
+
+d2            --peshay sound
+  $ slow 2
+  $ n "[0,3,7] [2, 5, 9]"  --chord
+  # s "midi"
+
+d3
+  $ slow 2
+  $ n "[0,3,7][2, 5, 9] 7 ~ [5 9]"  --chord
+  # s "midi"
+
+d2
+  $ slow 4
+  $ chop "<16 32>"
+  $ stut 4 0.5 (-0.1)
+  $ n "[d4, f4, e5] [c5, a4, g5]"
+  # s "midi"
+
+d3
+  $ n "c4 a3 e4 d3"
+  # s "midi"
+
+d3
+  $ n "c4 a3 e4 d3"
+  # s "midi"
+
+hush

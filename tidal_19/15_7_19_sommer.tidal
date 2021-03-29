@@ -1,0 +1,43 @@
+15_7_19_sommer.tidal
+
+p 1 $ s "80s"
+  # gain 1.5
+
+
+p 2
+  $ whenmod 5 2 (fast 2)
+  $ s "drone"
+  # cut "1"
+
+
+p 3
+  $ stut 5 0.2 (-0.1)
+  $ s "bass(8,2)"
+  # lpf 1000
+  # speed "1.2 0.9 0.6 1"
+
+
+p 4
+  $ whenmod 5 2 (fast 2)
+  $ slow 2
+  $ s "drumtraks(8,5)" 
+  # gain 0.7
+  # hpf 7000
+
+
+p 5
+  $ slow 2
+  $ s "jazz:0 ~ ~ ~"
+  # speed 0.7
+  # gain 1.1
+
+
+p 6
+  $ every 4 (slow 2)
+  $ s "~ ~ insect:2"
+
+
+p 7 $ every  4 (hurry 2) $ (chunk 4 (hurry 2) $ jux rev $ chop 8 $ s "jazz:0")
+
+
+hush

@@ -1,0 +1,40 @@
+p 1 $ stack[
+  slow 2
+  $  s "flute"
+  # cut 1
+  # orbit 1,
+  s "bd bd ~ [~ bd?]",
+  s "~ sd:1",
+  s "hih*8",
+  slow 2
+  $ s "~ psych"
+  # cut 1
+  # speed 0.75
+  # room 0.2
+  # gain 0.9
+  ]
+
+
+p 2
+  $ s "bd"
+  # orbit 2
+
+hush
+
+x = 4
+y = x + x
+
+p 1 $ stack[
+    every y (slow x) $ chop x $ s "kawai(8,3)?" #cut 1 # gain "1" # room 0.02,
+    offSet x $ s "dbq" # cut 2
+]
+
+
+
+x = 6
+a = "bd(6,3)?"
+
+
+p 3 $ slow x $ chop x $ s a
+
+hush

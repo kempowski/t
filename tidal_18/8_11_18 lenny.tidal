@@ -1,0 +1,5 @@
+d1 $ stut' 2 (0.125/2) $ sound "glitch_j:3"
+
+d1 $ slow 3 $ stut' 5 (0.25/2) ((|*| speed "1.8") . (|+| pan "1")) $ sound "glitch_j:1(3,8)"
+
+hush

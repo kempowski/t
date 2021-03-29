@@ -1,0 +1,49 @@
+16_7_19.tidal
+
+bd_pat = degradeBy "0.3 1.0 0.6 0.9  1.0 1.0 1.0 0.8  1.0 1.0 0.5 1.0  1.01.0 1.0 0.7"
+sd_pat = degradeBy "1.0 1.0 1.0 1.0  0.0 1.0 1.0 0.5  1.0 0.8 1.0 1.0  0.01.0 1.0 0.7"
+
+
+d1
+  $ slow 2
+  $ bd_pat
+  $ every 3 (hurry 2)
+  $ n "-24*16"
+  # s "jk*16"
+  # cutoff (choose [699,1200, 500, 500])
+  # gain 1.2
+
+
+p 2
+  -- $ superimpose (slow 2)
+  $ s "noise(8,5)"
+  # gain 1.2
+  # delay 1.125
+
+p 3
+  -- $ superimpose (fast 2)
+  $ slow 2
+  $ s "jungbass:-1(8,2)"
+  # speed "1.2 0.9 1.4"
+  # cut "23"
+  # gain 1
+
+p 4
+  $ whenmod 5 3 (hurry 2)
+  $ sometimes (#crush 2)
+  $ s "insect(5,2)"
+  #cut 1
+  # gain 0.8
+
+p 5
+  $ s "git"
+
+p 6
+  $ degradeBy 0.6
+  $ slow 2
+  $ sometimes (stutWith 5 (0.125)(id))
+  $ s (choose ["print", "cp"])
+  # cut 1
+  # gain "~ 0.8"
+
+hush 

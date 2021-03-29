@@ -1,0 +1,32 @@
+p 1
+  $ slow 4
+  $ s "chord ~ chord*3"
+    #cut 1
+    # speed "<0.5*2 0.75 >"
+    # gain 0.8
+    # room 0.8
+
+p 2
+  -- $ every 8 (fast 2)
+  $ every 8 (fast 2)
+  $ stack [
+    s "bd"
+    # gain 1.2
+    # room 0.5,
+    s "[hih:1 hih:2]*5"
+    # gain 0.9
+    # room 0.2,
+    s "~ sd:3"
+]
+
+hush
+
+
+p 3
+  $ brak
+  $ every 4 (rev . fast 2)
+  $ slow 2
+  $plyWith 4 (|* gain 0.85)
+  $ s "electropi:1"
+
+p 4 $ s "bd"

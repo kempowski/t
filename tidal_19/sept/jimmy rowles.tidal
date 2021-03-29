@@ -1,0 +1,13 @@
+cps(1.2)
+
+d1
+  $ every "<4 3>" (plyWith 7 (|* gain 0.95))
+  $ plyWith "<3 4>" (|* speed 1.15)
+  $ s "jazz"
+
+d2
+  $ fast 2
+  $ s "[bd*<3 4>] ~ snd? ~"
+
+
+hush

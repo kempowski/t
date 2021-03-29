@@ -1,0 +1,15 @@
+p 1
+  $ whenmod 5 3 (fast 2)
+  $ every 4 (hurry 4)
+  $ jux rev
+  $ chop 8
+  $ s "korea:1"
+  # cut 312
+
+
+  # speed sine
+
+p 1 $ every x (hurry x) $ chop y $ s "pad:2" # gain "0.8"
+
+
+  hush

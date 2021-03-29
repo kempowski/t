@@ -1,0 +1,8 @@
+p 0
+  $ stut 1 0.125
+  $ s "git"
+
+
+p 1 $ s "bd"
+
+hush

@@ -1,0 +1,14 @@
+p 1
+  $ chop 5
+  $ s "git"
+  # speed "<3 1 1.4>"
+  # gain "1"
+  #pan cosine
+
+p 2
+  $ every 4 (fast 2)
+  $ s "jk:0(2,3)"
+  # gain "1"
+  # size "2"
+
+hush

@@ -1,0 +1,15 @@
+setcps (85.09/60/4/2)
+
+p 1
+  $ whenmod 5 3 (chop 3)
+  $ every 2 (hurry 2)
+  $ slice 8 "0 1 2 4 7 1 0 0"
+  $ s "teppich:0 teppich:1"
+  # speed "1 1.2 0.9"
+  # gain "1.2"
+
+
+hush
+
+
+p 1 $ every 4 (hurry 4) $ chop 16 $ s "teppich" # gain "0.8"

@@ -1,0 +1,45 @@
+
+p 1 $ stack [
+  s "kawai ~ kawai [kawai kawai*2]",
+  brak $ s "juno-dr:1 ~ juno-dr:2 ~",
+  s "hih:3*8"
+]
+
+p 2
+  $ s "bass*8"
+  # cut 1
+  # unit "c" # begin "-1" # cut "-1" # coarse "1 2 4 8 16 32 64 128"
+
+hush
+
+setcps 0.6
+
+p 1
+  $ stutWith 2 (0.125*3) ((#hpf 2000) . (#room 0.2))
+  $ s "~ kawai"
+  # size 0.9
+  # cut 1
+
+a = [1,4,4]
+
+p 2
+  $ s "bd"
+  # delay 1
+  # delayt "<0.5 0.3 0.6>"
+  # delayfb 0.8
+  # cut 1
+
+hush
+
+test = "<4 4 5 8>"
+
+p 3
+  $ stutWith test (0.125*3) (stutWith 10 (0.0625) (|* gain 0.124))
+  $ s "bd"
+
+
+p 4 
+  $ plyWith 4 (|* speed "0.3 0.4 0.5")
+  $ s "sine"
+
+  hush

@@ -1,0 +1,18 @@
+gallerie nacht
+
+d1
+  $ every 6 (fast 2)
+  $ s "piano piano:1 piano:2"
+  # legato 1
+
+d1
+  $ chop 6
+  $ s "piano_fst"
+  # cut 1
+
+hush
+
+let drumW sampleName = fast 8
+                        $ s sampleName
+                        # unit "c"
+                        # speed 8

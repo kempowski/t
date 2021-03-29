@@ -1,0 +1,67 @@
+cps(1.4)
+
+let pattern = "0 1 2 3"
+
+let drumW sampleName = fast 4
+                        $ s sampleName
+                        # unit "c"
+                        # speed 4
+
+p 1
+  $slow 3
+  $ drumW "doron:0 doron:1 doron:2 doron:3"
+  # cut 2
+  # gain 1
+
+p 2
+  $ slow 2
+  $ off 0.25 (|+| 3)
+  $ n"[d1 f1 e1 a1 ~]/2" # s"chord"
+  # cut 1
+  -- # cps "<0.6 1>"
+
+p 3 $ stack [
+    -- $ slow 2
+    every 4 ( plyWith 4 ((|* speed 0.8)))
+    $ off 0.25 (|+| 12)
+    $ s "dbq" # n "<1>"
+    # cut 1
+    # gain 1.3
+    # lpf 800,
+    slow 4 $ s "bd(8,3)? doron:2"
+    # gain 1.4
+    # lpf 2600,
+    slow 4 $ s "perc"
+    # gain 1.2,
+    s "hih*4?/2"
+  ]
+
+  -- # cps "<1 0.666 0.4>"
+
+  hush
+
+
+p 7
+  $ off 0.25 (|-| gain 0.8)
+  $ every  4 (hurry 2) $ (chunk 4 (hurry 2) $ jux rev $ chop 8 $ s "jazz:0")
+
+p 1
+  $ whenmod 5 4 (fast 2)
+  $ s "<hih>(8,3)"
+  # gain 1.2
+  # pan (slow 2 sine)
+
+p 6
+  $ euclid "5" "[8 16]/4"
+  $ s "bd"
+  # gain "<1 0.8 0.95>"
+  # pan 0.3
+
+p 5
+  $ every 4 (chunk 2 (fast 4).(# gain 0.8))
+  $ s "~ ~ doron:2 ~ "
+  # gain 0.8
+
+p 7 silence
+
+hush

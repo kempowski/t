@@ -1,0 +1,43 @@
+p 1 $ stack [
+  slow 2
+  $ s "korea"
+  # gain 1.5
+  # cut 1
+]
+
+p 2
+  $ whenmod 8 2 (#gain 0)
+  $ drumW "doron" # n "0 1 2 3 4 5 <[6 6] 1> 7"
+  # speed 4
+  # cut 2
+  # gain 1
+
+  p 3
+
+  $ every 4 (rev)
+  $ plyWith "<4>" (|* gain 0.9)
+  $ s "kawai ~"
+  # gain 0.8
+
+p 4
+$ stack [
+  plyWith 4 (rev)
+    $ slow 4
+    $ s "korea"
+    # gain 1.5
+    # cut 1,
+    every 4 (rev)
+    $ plyWith "<4>" (|* gain 0.9)
+    $ s "kawai ~"
+    # gain 0.8,
+    slow 2 $ s "bd" # gain 1.2
+] # cps "<1 0.75 0.5>"
+
+
+let drumW sampleName = fast 8
+                        $ s sampleName
+                        # unit "c"
+                        # speed 8
+
+
+hush

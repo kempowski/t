@@ -1,0 +1,22 @@
+d1
+  $ plyWith "<8 1 4>" (|* speed 1.1)
+  $ s "bd sd"
+
+d2 $ stack[
+  slow 8
+  $ s "korea(16,8)"
+  $ whenmod 5 3 (fast 2)
+  # pan (slow 2 sine),
+  s "bd [hih hih:2]"
+  # gain 0.8
+] # cps "<1 1.2 0.8 4>"
+
+
+d3
+  $ every 4 (slow 2)
+  $ plyWith "<2 4 3>" (plyWith "<3 4 2>" (|* gain 1.1))
+  $ s "jazz:0 jazz:1"
+  #cut 1
+
+
+d4 $ s "noise"

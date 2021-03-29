@@ -1,0 +1,36 @@
+setcps 0.8
+
+p 1
+  $slow 4
+  $ stut 16 0.25 (-0.0125)
+  $ s "jk:3(8,3)"
+  # gain 3
+  # hpf 1000
+  # cut 123
+
+p 2
+  -- $ fast 3
+  $ s "[bd bd] ~ sd:3 [~ sd]"
+
+p 3
+  $ slow 4
+  $ s "[ride ride] [ride [ride ride]] [ride ride ride] [ride [ride ride]] [ride ride ride] [ride [ride ride]] [ride ride ride] [ride]]"
+  # up "0.8 0.5"
+  # cut 123
+  # gain 1.5
+  -- # speed "1 0.75"
+
+hush
+
+p 4
+  $ slow 4
+  $ s "[bin bin] [bin [bin bin]] [bin bin bin] [bin [bin bin]] [bin bin bin] [bin [bin bin]] [bin bin bin] [bin]]"
+  # up "0.8 0.5"
+  # cut 123
+  # gain 1
+
+p 4
+  $ s "bin"
+  #gain 2
+
+  hush

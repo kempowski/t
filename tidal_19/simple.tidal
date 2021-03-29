@@ -1,0 +1,34 @@
+cps (0.75)
+
+hush
+
+d1
+  $ every 4 (slow 2 . rev)
+  $ plyWith 8 (|* gain 0.8)
+  $ s "bd [hih:1*2] < ~ snd> hih:2"
+  # gain 1.2
+
+d2 $ s "snd"
+
+d2
+  $ plyWith 3 (|* speed 1.1)
+  $ every 6 (striate' 12 (1/12))
+  $ s "sub:1"
+  # gain 1.2
+  # legato 1
+
+d3
+  $ plyWith 3 (# speed 1.2)
+  $ s "perc ~ ohih ohih:1"
+  # pan sine
+
+  setcps 1.333333333333
+
+d4
+  $ every 8 (stut 4 0.25 (-0.1))
+  $ every 4 (plyWith 6 ((rev) . (#gain 0.8)))
+  $ off 0.25 (# gain 0.9)
+  $ s "bongo bongo:2"
+  # gain 1
+
+hush

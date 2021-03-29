@@ -1,0 +1,9 @@
+p 1
+  $ slow 2
+  $ s "chord(3,8)"
+  # speed 1.5
+
+p 2
+  $ s "bd*4"
+
+hush

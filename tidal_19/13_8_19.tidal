@@ -1,0 +1,29 @@
+let drumW sampleName = fast 8
+                        $ s sampleName
+                        # unit "c"
+                        # speed 8
+
+d1
+  $ whenmod 6 3 (# gain "0")( drumW "doron"
+                              # n (irand(8))
+                              # cps 0.2
+                              )
+
+d2
+  $ striateBy 4 (1/8)
+  $ slow 3
+  $ s "arpy*6"
+  # gain "1.2"
+  # speed "0.4 0.5 0.7"
+  # cut 1
+
+d3
+  $ slow 2
+  $ every 3 (jux rev)
+  -- $ stut 3 0.08 (-1)
+  $ midinote "36 38 40 44" # s "midi" #midichan 1
+  # gain "1.3 1 0.8"
+
+cps 1.2
+
+hush

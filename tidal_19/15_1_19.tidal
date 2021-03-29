@@ -1,0 +1,7 @@
+x = 24
+y = x / 2
+p 2 $ every x (hurry y) $ (chunk x (hurry y) $ jux rev $ chop x $ s "bd") # gain "2"
+
+p 2 $ every 4 (hurry 2) $ (chunk 4 (hurry 2) $ jux rev $ chop 4 $ s "bd") # gain "2"
+
+hush

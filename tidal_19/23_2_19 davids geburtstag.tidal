@@ -1,0 +1,39 @@
+p 0
+  $ whenmod 5 3 (fast 3)
+  $ slow 1.5
+  -- $ run 3
+  $ s "drone"
+  # speed 0.5
+
+p 1
+  $ chunk 4 (rev)
+  $ chop 4
+  $ every 5 (hurry 2)
+  $ s "chin" + n "0 1 2 [3 4]"
+  # room 0.05
+  # speed 0.1
+
+p 2
+  -- $ slow 2
+  -- $ every 2 (fast 4)
+  $ s "jk:1"
+  # gain 1.4
+
+p 5
+  $ slow 2
+  $ stut 5 0.2 (-0.1)
+  $ s "~ ~ sd ~"
+  # gain 0.7
+
+p 4
+  $ every 4 (hurry 2)
+  $ (chunk 4 (hurry 2))
+  $ chop 5
+  $ s "insect(5,3)"
+
+p 5
+  $ s "sine(3,2)"
+
+p 4 $ silence
+
+hush

@@ -1,0 +1,45 @@
+p 1 $ s"git_voc ~ git_voc*2"
+  # cut 1
+
+p 2 $ s "bd"
+
+p 3
+  $ slow 2
+  $ rev
+  $ chop "<128 64 8 32>"
+  $ s"git_voc"
+  # hpf 1000
+  # cut 2
+  # gain 0.8
+  # room 0.4
+
+p 4
+  $ s"hih*3 hih*2"
+  # gain 1
+
+p 5
+  $ every 4 (juxBy 0.5 (fast 2))
+  $ s "tost(4,3)"
+  # gain 0.7
+
+
+p 6 $ stack [
+  slow 2
+  $ s"flute"
+  # speed "<0.5 0.75 0.8 0.6>"
+  # cut 2
+  # gain 0.7,
+  s "bd"
+  # gain 1.1
+]
+
+p 7
+  $ slow 4
+  $ plyWith "<4 8>" (|* speed 0.8)
+  $ s"flute(8,2)"
+  # cut 2
+
+p 8
+  $ chop "<4 6 12>"
+  $ s"flute"
+  # cut 1

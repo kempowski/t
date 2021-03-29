@@ -1,0 +1,21 @@
+let primzahlen = "2 3 5 7"
+
+xfade 2 $ stack [
+  whenmod 5 3 (plyWith "<1 3 5>" ((|* speed 0.9).(#cut 1)))
+  $ s "sub:3 . bd*2" # gain 1.2,
+  every 2 (fast 2) $ s "hih(8,3)" # pan (slow 2 sine) # gain 1.2,
+  slow 2 $ s " ~ ~ snd ~" # gain 0.8,
+  plyWith primzahlen (|* speed 0.85) $ s "sine" # gain "<0.7 1 0.9>" # cut 2
+] # cps "<1 0.8 0.4>"
+
+p 2 $ plyWith 3 (|*speed 0.8) $ stack [
+  plyWith "<2 3 4>" (|* speed "<0.2 0.5>") $ s "metal [ohih hih]"
+]
+
+p 1 silence
+
+p 2 $ stack [
+  plyWith "<2 3 4>" (|*speed "<0.2 0.5>") $ s "metal [ohih hih]" # gain 1.4
+]
+
+hush

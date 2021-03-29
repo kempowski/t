@@ -1,0 +1,16 @@
+cps(260)
+
+x = 6
+y = x*x
+
+p 1 $ every x (hurry x) $ chop y $ s "pad:2" # gain "0.8"
+
+p 2 $ every 4 (hurry 2) $ (chunk 4 (hurry 2) $ jux rev $ chop 8 $ s "bd")
+
+p 3 $ chop 4 $ chunk 4 (jux rev) $ every 4 (rev) $ chunk 4 (jux rev) $ s "~ ~ sn:1 ~" # gain "0.8"
+
+p 4 $ every 2 (hurry 5) $ s "~ hh:0(8,2)" # gain "1"
+
+p 4 silence
+
+hush

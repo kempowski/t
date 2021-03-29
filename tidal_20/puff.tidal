@@ -1,0 +1,45 @@
+cps(100/60)
+
+p 1
+  $ slow 4
+  $ s"jazz"
+  # speed 0.2
+  # gain 1.1
+
+p 2
+  $ s "bd*2 "
+
+p 3
+  $ rev
+  $ every 2 (plyWith 3 (rev))
+  $ chop 32
+  $ slow 1
+  $ s "~ flute"
+  # gain 0.5
+  # speed 0.95
+  # hpf 1400
+
+p 4
+  $ slow 4
+  $ plyWith 4 (# gain "0.3 0.4 0.5")
+  $ s "kawai(6,2)"
+  # gain 0.4
+
+p 4 $ silence
+
+p 5
+  $ slow 4
+  $ s "~ korea:0 ~ ~"
+  # gain 0.75
+  # speed 1
+
+p 5 $ silence
+
+p 6
+  $ plyWith 16 (|* speed "<1.1>")
+  $ s "sub:1"
+  # gain 0.7
+  # speed 0.8
+  # cut 1
+
+  hush

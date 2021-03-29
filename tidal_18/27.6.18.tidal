@@ -1,0 +1,19 @@
+cps (110/120)
+
+d1 $ iter 4 $ slow 2 $ stut' 6 (0.125/2) ((|*| speed "1.8") . (|+| pan "1")) $ sound "jk:0(3,8)"
+
+d4 $ slow 1.5 $ sound "glitch_j:0"
+  # cut "1"
+  # gain "1"
+  # lpf "2000"
+
+
+d2 $ slow 3 $ jux (rev) $ sound "deeper(3,8)"
+  # up "[0 2 6 4]/2"
+  -- # gain "0.8"
+  # cut "1"
+  # hpf "600"
+  # gain "1.1"
+
+
+hush
